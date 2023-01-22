@@ -1,20 +1,18 @@
 window.addEventListener('load',function(){
     const pullDownButton = document.getElementById("lists")
     console.log("読み込みました")
-})
 
-document.addEventListener('click',function(){
-    const mouseOverButton = document.getElementById('lists')
-    console.log("クリックされた")
-})
+    pullDownButton.addEventListener('click',function(){
+        console.log("クリックされた")
+    })
 
+    pullDownButton.addEventListener('mouseover',function(){
+        console.log("乗った")
+        pullDownButton.setAttribute("style","background-color:blue;")
+    })
 
-document.addEventListener('mouseover',function(){
-    const mouseOverButton = document.getElementById('lists')
-    console.log("乗った")
-})
-
-document.addEventListener('mouseout',function(){
-    const mouseOutButton = document.getElementById("list")
-    console.log("離れた")
+    pullDownButton.addEventListener('mouseout',function(){
+        console.log("離れた")
+    })
+    
 })
