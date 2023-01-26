@@ -1,6 +1,8 @@
-window.addEventListener('load',function(){
+function pullDown(){
     const pullDownButton = document.getElementById("lists")
     const pullDownParents = document.getElementById("pull-down")
+    const pullDownChild = document.querySelectorAll(".pull-down-list")
+    const currentList = document.getElementById("current-list")
     console.log("読み込みました")
 
     pullDownButton.addEventListener('click',function(){
@@ -22,5 +24,15 @@ window.addEventListener('load',function(){
         this.removeAttribute("style","background-color:red;")
         console.log("外れたときは赤色")
     })
+
+    pullDownChild.forEach(function(list){
+        list.addEventListener('click',function(){
+            const value = list.innerHTML
+            currentList.innerHTML = value
+            console.log(value)
+        })
+    })
     
-})
+}
+
+window.addEventListener('load',pullDown)
